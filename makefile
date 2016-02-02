@@ -8,7 +8,11 @@ all: $(TARGETS)
 	$(CC) $(FLAGS) $<
 
 run:
-	java MinMax
+	java -ea MinMax
+
+debug:$(TARGETS)
+	jdb MinMax
+	#gcj-5 -g --main=MinMax -o MinMax MinMax.class MinMax$$Pair.class && gdb MinMax
 
 clean:
 	rm *.class
